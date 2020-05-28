@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "dev-server": "nodemon",
-    "build": "rimraf ./dist && tsc && rimraf ./public && npm run build --prefix client",
+    "build": "rimraf ./dist && tsc && npm run install:client &&  rimraf ./public && npm run build --prefix client",
     "start": "node dist/server.js",
     "client": "npm start --prefix client",
+    "install:client": "npm install --prefix client",
     "dev": "concurrently \"npm run dev-server\" \"npm run client\""
   },
   "repository": {

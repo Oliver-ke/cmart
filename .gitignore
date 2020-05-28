@@ -1,0 +1,9 @@
+node_modules
+./prisma/.env
+
+/client/node_modules
+/client/build
+
+/dist
+
+/public

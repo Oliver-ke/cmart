@@ -1,0 +1,85 @@
+
+.filter-card{
+  border: 2px solid #cccccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: #f2f2f2f2;
+}
+
+.filter-card .click-icon{
+  position: absolute;
+  top: 1rem;
+  right: 20px;
+  color: #4A0D67;
+}
+
+.filter-card:hover{
+  border: 2px solid #4A0D67;
+  cursor: pointer;
+}
+
+.filter-card.active{
+  border: 2px solid #4A0D67;
+}
+
+.filter-card .date {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.filter-card .gender {
+  font-size: 15px;
+  margin: 0;
+  font-weight: bold;
+  color: rgba(0,0,0,0.7);
+  margin-bottom: 0.5rem;
+}
+
+.filter-card .countries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+}
+
+.countries .country{
+  border-radius: 50px;
+  height: 35px;
+  background-color: #cccccc;
+  padding: 10px;
+  margin: 5px;
+  font-size: 10px;
+}
+
+.filter-card .colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colors .color {
+  min-width: 15px;
+  min-height: 15px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.item-swipper{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  width: 100%;
+}

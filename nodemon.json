@@ -3,6 +3,8 @@
     "src"
   ],
   "ext": ".ts,.js",
-  "ignore": [],
+  "ignore": [
+    "client/*"
+  ],
   "exec": "ts-node ./src/server.ts"
 }

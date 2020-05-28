@@ -1,12 +1,15 @@
 import React from 'react';
 
 
-import '.appHeader.style.css'
+import './appHeader.styles.css'
 const AppHeader = () => {
   return (
     <div className="app-header">
       <div className="app-logo">
-        <img />
+        <h1>
+          <i className="fa fa-car"></i>
+          <span> - {" "}Mar<span className="wave">t</span></span>
+        </h1>
       </div>
     </div>
   )

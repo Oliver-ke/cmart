@@ -1,0 +1,161 @@
+.item-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-wrapper{
+  padding:  0 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 100vw;
+}
+
+.item h3, h4{
+  margin: 0;
+}
+
+.item h4{
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+  align-items: 'flex-start';
+  padding: 1.5rem 0.5rem;
+  width: 49%;
+  border: 1px solid #cccccc;
+  margin: 0.3rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (max-width: 700px) {
+  .item {
+    width: 100%;
+  }
+}
+
+.item .car-img{
+  width: 45%;
+  margin-right: 10px;
+}
+
+.car-img img{
+  width: 100%;
+  height: 100%;
+}
+
+.item .property-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item .properties{
+  display: flex;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.properties .property{
+  margin-right: 5px;
+}
+
+.property.with-bars{
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  padding: 0 5px;
+}
+
+.property .property-name{
+  color: rgba(0,0,0,0.5);
+}
+
+.property .color{
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h4 span{
+  color: rgba(0,0,0,0.5);
+  line-height: 25px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.centered h4, .centered i {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 10px;
+}
+
+/* Item spinner classes */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  width: 100%;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}

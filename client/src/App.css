@@ -1,5 +1,24 @@
 
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
 
+.app {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.app .filter-ind{
+  display: flex;
+  padding-left: 2.5rem;
+  align-items: center;
+}
+
+.filter-ind h3{
+  margin: 0 0 0 10px;
+  color: rgba(0,0,0 ,0.8);
+}
+
+.filter-ind img{
+  width: 40px;
+}

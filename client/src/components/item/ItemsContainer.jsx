@@ -6,12 +6,12 @@ const ItemsContainer = ({ selectedFilter }) => {
   const [carOwners, setCarOwners] = useState(null);
   const [count, setCount] = useState(null);
   const [initialPayload, setInitialPayload] = useState(null);
-
+  const baseUri = 'https://carmart.herokuapp.com/';
   // runs once the component is mounted
   useEffect(() => {
     (async () => {
       try {
-        const apiUri = 'http://localhost:5000/api/v1/carowner/page?start=1&stop=10';
+        const apiUri = `${baseUri}api/v1/carowner/page?start=1&stop=10`;
         const res = await fetch(apiUri);
         const { data } = await res.json();
         setCarOwners(data);
@@ -31,7 +31,7 @@ const ItemsContainer = ({ selectedFilter }) => {
           Object.keys(selectedFilter).map(key => key + '=' + selectedFilter[key]).join('&')
         ) : null;
         setCarOwners(null);
-        const apiUri = `http://localhost:5000/api/v1/carowner/query?${query}`;
+        const apiUri = `${baseUri}api/v1/carowner/query?${query}`;
         const res = await fetch(apiUri);
         const { data, count } = await res.json();
 

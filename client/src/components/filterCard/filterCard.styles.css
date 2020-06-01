@@ -1,14 +1,24 @@
 
 .filter-card{
-  border: 2px solid #cccccc;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.5rem 0;
   margin: 1rem;
-  border-radius: 10px;
-  background-color: #f2f2f2f2;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ffffff;
+  width: 50%;
+  text-decoration: none;
+  transition: all .5s ease-out;
+}
+
+
+@media screen and (max-width: 700px) {
+  .filter-card{
+    width: 90%;
+  }
 }
 
 .filter-card .click-icon{
@@ -19,8 +29,8 @@
 }
 
 .filter-card:hover{
-  border: 2px solid #4A0D67;
   cursor: pointer;
+  transform: scale(1.07);
 }
 
 .filter-card.active{
@@ -28,11 +38,12 @@
 }
 
 .filter-card .date {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
-  color: #000000;
+  color:  #343A40;
   margin: 0;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .filter-card .gender {
@@ -54,10 +65,13 @@
 .countries .country{
   border-radius: 50px;
   height: 35px;
-  background-color: #cccccc;
+  background-color: #F8F9FA;
   padding: 10px;
   margin: 5px;
   font-size: 10px;
+  color:  #6C757D;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 .filter-card .colors {

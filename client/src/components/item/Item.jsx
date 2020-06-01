@@ -1,5 +1,6 @@
 import React from 'react';
-import carImg from '../../assets/carImg2.png';
+import { Link } from 'react-router-dom';
+import carImg from '../../assets/car.png';
 
 import './item.styles.css'
 const Item = ({ carOwner }) => {

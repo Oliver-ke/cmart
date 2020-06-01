@@ -2,8 +2,7 @@
 .app-header{
   display: flex;
   width: 100vw;
-  /* border-bottom: 2px solid #cccccc; */
-  height: 70px;
+  height: 50px;
   align-items: center;
   padding: 0 2rem;
   background-color: #4A0D67;

@@ -1,36 +1,23 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import Item from './Item.jsx'
-import ItemSpinner from './ItemSpinner'
+import { Link } from 'react-router-dom';
+import Item from '../../components/item/Item'
+import Spinner from '../../components/spinner/Spinner';
 
-const ItemsContainer = ({ selectedFilter }) => {
+import './carOwnerPage.style.css';
+const CarOwnerPage = ({ history }) => {
   const [carOwners, setCarOwners] = useState(null);
   const [count, setCount] = useState(null);
-  const [initialPayload, setInitialPayload] = useState(null);
+  const { location: { filter } } = history;
+  console.log(filter);
   const baseUri = 'https://carmart.herokuapp.com/';
-  // runs once the component is mounted
   useEffect(() => {
     (async () => {
       try {
-        const apiUri = `${baseUri}api/v1/carowner/page?start=1&stop=10`;
-        const res = await fetch(apiUri);
-        const { data } = await res.json();
-        setCarOwners(data);
-        setInitialPayload(data);
-      } catch (error) {
-        console.log('Error fetch from local api')
-      }
-    })();
-  }, [])
-
-  useEffect(() => {
-    (async () => {
-      try {
-        if (selectedFilter === null) return setCarOwners(initialPayload);
-        selectedFilter = { ...selectedFilter, start_page: 1, end_page: 20 }
+        const selectedFilter = { ...filter, start_page: 1, end_page: 600 }
         const query = selectedFilter ? (
           Object.keys(selectedFilter).map(key => key + '=' + selectedFilter[key]).join('&')
         ) : null;
-        setCarOwners(null);
+
         const apiUri = `${baseUri}api/v1/carowner/query?${query}`;
         const res = await fetch(apiUri);
         const { data, count } = await res.json();
@@ -41,15 +28,19 @@ const ItemsContainer = ({ selectedFilter }) => {
         console.log('Error fetch from local api')
       }
     })()
-  }, [selectedFilter])
+  }, [])
 
   return (
     <div className="main-wrapper">
+      <div className="header">
+        <Link to="/">
+          <h4><span><i className="fa fa-arrow-left"></i></span>Back</h4>
+        </Link>
+      </div>
       {carOwners ? (
         <Fragment>
           {carOwners.length > 0 ? (
             <Fragment>
-              {selectedFilter && <h3>Search Results ({count})</h3>}
               <div className="item-container">
                 {carOwners.map((carOwner, idx) => (
                   <Item key={idx} carOwner={carOwner} />
@@ -58,13 +49,13 @@ const ItemsContainer = ({ selectedFilter }) => {
             </Fragment>
           ) : (<div className="centered">
             <i className="fas fa-hdd"></i>
-            <h4>No item found with the given filter</h4>
+            <h4>No item found Found</h4>
           </div>)}
         </Fragment>
-      ) : <div className="centered"> <ItemSpinner /></div>}
+      ) : <div className="centered"> <Spinner /></div>}
     </div>
   )
 }
 
 
-export default ItemsContainer;
+export default CarOwnerPage;

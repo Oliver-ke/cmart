@@ -4,8 +4,10 @@
 }
 
 .app {
-  background-color: #ffffff;
+  background-color: #F4F6F9;
   overflow-x: hidden;
+  min-height: 100vh;
+  font-family: sans-serif;
 }
 
 .app .filter-ind{
